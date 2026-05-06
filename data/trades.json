@@ -1,0 +1,22 @@
+[
+  {
+    "id": "df15ea94-0327-449f-a5fe-99c2c18a8bf1",
+    "date": "2025-11-22",
+    "holdingId": "hold-samsung",
+    "type": "buy",
+    "quantity": 50,
+    "price": 72000,
+    "fee": 3600,
+    "memo": "첫 매수"
+  },
+  {
+    "id": "a83c627b-5117-4e6e-9d9c-e6d03b307017",
+    "date": "2025-12-22",
+    "holdingId": "hold-apple",
+    "type": "buy",
+    "quantity": 10,
+    "price": 170,
+    "fee": 5,
+    "memo": "애플 매수"
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "d50d1ee1-dfb3-4bb6-a441-c646ea703efe",
+    "date": "2026-04-21",
+    "accountId": "acc-check",
+    "type": "income",
+    "categoryId": "cat-salary",
+    "amount": 4000000,
+    "memo": "월급",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  },
+  {
+    "id": "c0932139-04be-4f20-aac3-554d8eb0ac47",
+    "date": "2026-04-20",
+    "accountId": "acc-check",
+    "type": "expense",
+    "categoryId": "cat-food",
+    "amount": 45000,
+    "memo": "점심",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  },
+  {
+    "id": "02902edb-31c3-418b-a4b5-0526efa7ccfa",
+    "date": "2026-04-19",
+    "accountId": "acc-check",
+    "type": "expense",
+    "categoryId": "cat-transport",
+    "amount": 52000,
+    "memo": "교통카드 충전",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  },
+  {
+    "id": "401f660e-82d6-4f46-b76c-cf7ce1240262",
+    "date": "2026-04-18",
+    "accountId": "acc-check",
+    "type": "expense",
+    "categoryId": "cat-shopping",
+    "amount": 89000,
+    "memo": "온라인 쇼핑",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  },
+  {
+    "id": "4f19c5e8-3291-415c-b019-a85557df357a",
+    "date": "2026-04-17",
+    "accountId": "acc-check",
+    "type": "expense",
+    "categoryId": "cat-food",
+    "amount": 35000,
+    "memo": "저녁 외식",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  },
+  {
+    "id": "c492e0aa-fd26-4356-871e-1fb997b89395",
+    "date": "2026-04-16",
+    "accountId": "acc-check",
+    "type": "expense",
+    "categoryId": "cat-culture",
+    "amount": 15000,
+    "memo": "넷플릭스",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  },
+  {
+    "id": "23546dac-65d9-4651-b21d-46d4c7766fa0",
+    "date": "2026-04-15",
+    "accountId": "acc-check",
+    "type": "expense",
+    "categoryId": "cat-food",
+    "amount": 12000,
+    "memo": "카페",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  },
+  {
+    "id": "990f2c2a-712c-4bc0-97cd-77db5376d370",
+    "date": "2026-04-14",
+    "accountId": "acc-check",
+    "type": "expense",
+    "categoryId": "cat-medical",
+    "amount": 30000,
+    "memo": "병원",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  },
+  {
+    "id": "2d6ddc84-afde-4c8e-990a-07b5dcbd91b3",
+    "date": "2026-03-22",
+    "accountId": "acc-check",
+    "type": "income",
+    "categoryId": "cat-salary",
+    "amount": 4000000,
+    "memo": "월급",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  },
+  {
+    "id": "7adb412c-8a59-4f2a-b549-6425c14a0c0b",
+    "date": "2026-03-22",
+    "accountId": "acc-check",
+    "type": "expense",
+    "categoryId": "cat-food",
+    "amount": 380000,
+    "memo": "식비 합계",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  },
+  {
+    "id": "fc7c78e6-ba41-462e-8cca-3524f04f5d92",
+    "date": "2026-03-22",
+    "accountId": "acc-check",
+    "type": "expense",
+    "categoryId": "cat-housing",
+    "amount": 500000,
+    "memo": "월세",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  },
+  {
+    "id": "d27bd85d-e70a-4e95-b0c1-d26431d9197b",
+    "date": "2026-03-22",
+    "accountId": "acc-check",
+    "type": "expense",
+    "categoryId": "cat-transport",
+    "amount": 120000,
+    "memo": "교통비",
+    "createdAt": "2026-04-22T09:33:56.491Z"
+  }
+]

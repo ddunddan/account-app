@@ -1,0 +1,366 @@
+[
+  {
+    "id": "bca80f73-f5ec-443b-8a83-481019f66242",
+    "date": "2025-10-24",
+    "totalAssets": 20895000,
+    "totalLiabilities": 0,
+    "netWorth": 20895000,
+    "breakdown": {
+      "cash": 15000000,
+      "stockKr": 3600000,
+      "stockUs": 2295000,
+      "other": 0
+    }
+  },
+  {
+    "id": "721be687-c552-4a1b-be85-5b58f974d8cc",
+    "date": "2025-10-31",
+    "totalAssets": 21007665,
+    "totalLiabilities": 0,
+    "netWorth": 21007665,
+    "breakdown": {
+      "cash": 15084000,
+      "stockKr": 3612600,
+      "stockUs": 2311064.9999999995,
+      "other": 0
+    }
+  },
+  {
+    "id": "67474c6a-2e33-4939-80ae-114f6b43e24d",
+    "date": "2025-11-07",
+    "totalAssets": 21120330,
+    "totalLiabilities": 0,
+    "netWorth": 21120330,
+    "breakdown": {
+      "cash": 15168000.000000002,
+      "stockKr": 3625199.9999999995,
+      "stockUs": 2327130,
+      "other": 0
+    }
+  },
+  {
+    "id": "1f57fb87-98a4-418d-844e-885a4ff98c06",
+    "date": "2025-11-14",
+    "totalAssets": 21232995,
+    "totalLiabilities": 0,
+    "netWorth": 21232995,
+    "breakdown": {
+      "cash": 15251999.999999998,
+      "stockKr": 3637800,
+      "stockUs": 2343195,
+      "other": 0
+    }
+  },
+  {
+    "id": "e284da48-98cc-4f6b-bfdd-362d0ec7d42a",
+    "date": "2025-11-21",
+    "totalAssets": 21345660,
+    "totalLiabilities": 0,
+    "netWorth": 21345660,
+    "breakdown": {
+      "cash": 15336000,
+      "stockKr": 3650400,
+      "stockUs": 2359260,
+      "other": 0
+    }
+  },
+  {
+    "id": "25e471cc-2255-48ea-823b-f5518bb05be0",
+    "date": "2025-11-28",
+    "totalAssets": 21458325,
+    "totalLiabilities": 0,
+    "netWorth": 21458325,
+    "breakdown": {
+      "cash": 15420000,
+      "stockKr": 3663000.0000000005,
+      "stockUs": 2375325,
+      "other": 0
+    }
+  },
+  {
+    "id": "1734aee8-902a-4d71-a990-4614b34d5e2c",
+    "date": "2025-12-05",
+    "totalAssets": 21570990,
+    "totalLiabilities": 0,
+    "netWorth": 21570990,
+    "breakdown": {
+      "cash": 15504000.000000002,
+      "stockKr": 3675599.9999999995,
+      "stockUs": 2391390,
+      "other": 0
+    }
+  },
+  {
+    "id": "e8089f13-88d4-47ed-a9e8-cbe5fc9b6b83",
+    "date": "2025-12-12",
+    "totalAssets": 21683655,
+    "totalLiabilities": 0,
+    "netWorth": 21683655,
+    "breakdown": {
+      "cash": 15587999.999999998,
+      "stockKr": 3688200,
+      "stockUs": 2407455,
+      "other": 0
+    }
+  },
+  {
+    "id": "a20a88ed-9e6f-4cb2-ac49-65d7fbb840a6",
+    "date": "2025-12-19",
+    "totalAssets": 21796320,
+    "totalLiabilities": 0,
+    "netWorth": 21796320,
+    "breakdown": {
+      "cash": 15672000,
+      "stockKr": 3700800,
+      "stockUs": 2423520,
+      "other": 0
+    }
+  },
+  {
+    "id": "2d137554-1780-468c-856a-efdfc027d039",
+    "date": "2025-12-26",
+    "totalAssets": 21908985,
+    "totalLiabilities": 0,
+    "netWorth": 21908985,
+    "breakdown": {
+      "cash": 15756000,
+      "stockKr": 3713400.0000000005,
+      "stockUs": 2439585,
+      "other": 0
+    }
+  },
+  {
+    "id": "467a2ee6-eccb-441f-8571-fb7ec8fd1f63",
+    "date": "2026-01-02",
+    "totalAssets": 22021650,
+    "totalLiabilities": 0,
+    "netWorth": 22021650,
+    "breakdown": {
+      "cash": 15840000,
+      "stockKr": 3725999.9999999995,
+      "stockUs": 2455650,
+      "other": 0
+    }
+  },
+  {
+    "id": "ecd67f21-6b5a-44f6-bdea-b68d2a425b41",
+    "date": "2026-01-09",
+    "totalAssets": 22134315,
+    "totalLiabilities": 0,
+    "netWorth": 22134315,
+    "breakdown": {
+      "cash": 15924000.000000002,
+      "stockKr": 3738600,
+      "stockUs": 2471715,
+      "other": 0
+    }
+  },
+  {
+    "id": "2041c652-6775-46e1-a6b8-770d53758786",
+    "date": "2026-01-16",
+    "totalAssets": 22246980,
+    "totalLiabilities": 0,
+    "netWorth": 22246980,
+    "breakdown": {
+      "cash": 16007999.999999998,
+      "stockKr": 3751200,
+      "stockUs": 2487780,
+      "other": 0
+    }
+  },
+  {
+    "id": "83772dbc-93f5-48c7-ab90-592b3076fc15",
+    "date": "2026-01-23",
+    "totalAssets": 22359645,
+    "totalLiabilities": 0,
+    "netWorth": 22359645,
+    "breakdown": {
+      "cash": 16092000,
+      "stockKr": 3763800.0000000005,
+      "stockUs": 2503845,
+      "other": 0
+    }
+  },
+  {
+    "id": "74cd1b88-b8ac-499a-adf6-83dc1036893a",
+    "date": "2026-01-30",
+    "totalAssets": 22472310,
+    "totalLiabilities": 0,
+    "netWorth": 22472310,
+    "breakdown": {
+      "cash": 16176000,
+      "stockKr": 3776399.9999999995,
+      "stockUs": 2519910,
+      "other": 0
+    }
+  },
+  {
+    "id": "c719cd76-9dc9-4c9a-8c0d-d12dd86e9fe1",
+    "date": "2026-02-06",
+    "totalAssets": 22584975,
+    "totalLiabilities": 0,
+    "netWorth": 22584975,
+    "breakdown": {
+      "cash": 16260000.000000002,
+      "stockKr": 3789000,
+      "stockUs": 2535975,
+      "other": 0
+    }
+  },
+  {
+    "id": "75bd565d-4eb2-4d0e-8c56-00169a4da59f",
+    "date": "2026-02-13",
+    "totalAssets": 22697640,
+    "totalLiabilities": 0,
+    "netWorth": 22697640,
+    "breakdown": {
+      "cash": 16343999.999999998,
+      "stockKr": 3801600,
+      "stockUs": 2552040,
+      "other": 0
+    }
+  },
+  {
+    "id": "5b5bc574-e7c4-42dd-a0e3-8f8083a9727d",
+    "date": "2026-02-20",
+    "totalAssets": 22810305,
+    "totalLiabilities": 0,
+    "netWorth": 22810305,
+    "breakdown": {
+      "cash": 16428000,
+      "stockKr": 3814200.0000000005,
+      "stockUs": 2568105,
+      "other": 0
+    }
+  },
+  {
+    "id": "6f7fb4b3-149e-4fc7-9725-7e9c2387d394",
+    "date": "2026-02-27",
+    "totalAssets": 22922970,
+    "totalLiabilities": 0,
+    "netWorth": 22922970,
+    "breakdown": {
+      "cash": 16512000,
+      "stockKr": 3826800,
+      "stockUs": 2584169.9999999995,
+      "other": 0
+    }
+  },
+  {
+    "id": "9215ae42-43f6-4304-94c5-8c29948b9551",
+    "date": "2026-03-06",
+    "totalAssets": 23035635,
+    "totalLiabilities": 0,
+    "netWorth": 23035635,
+    "breakdown": {
+      "cash": 16596000,
+      "stockKr": 3839400,
+      "stockUs": 2600235,
+      "other": 0
+    }
+  },
+  {
+    "id": "ca03be62-b9c8-4a69-b1d9-3feca6ee97b9",
+    "date": "2026-03-13",
+    "totalAssets": 23148300,
+    "totalLiabilities": 0,
+    "netWorth": 23148300,
+    "breakdown": {
+      "cash": 16680000.000000002,
+      "stockKr": 3852000,
+      "stockUs": 2616300.0000000005,
+      "other": 0
+    }
+  },
+  {
+    "id": "17384fe5-dbcf-4269-88a8-b2a3dadea72a",
+    "date": "2026-03-20",
+    "totalAssets": 23260964.999999996,
+    "totalLiabilities": 0,
+    "netWorth": 23260964.999999996,
+    "breakdown": {
+      "cash": 16763999.999999998,
+      "stockKr": 3864599.9999999995,
+      "stockUs": 2632365,
+      "other": 0
+    }
+  },
+  {
+    "id": "0ba52f5e-7b53-4d43-ac3c-5faf7b284895",
+    "date": "2026-03-27",
+    "totalAssets": 23373630,
+    "totalLiabilities": 0,
+    "netWorth": 23373630,
+    "breakdown": {
+      "cash": 16848000,
+      "stockKr": 3877200,
+      "stockUs": 2648430,
+      "other": 0
+    }
+  },
+  {
+    "id": "45d9995c-4c65-4b67-b457-b5ede8cac22d",
+    "date": "2026-04-03",
+    "totalAssets": 23486295,
+    "totalLiabilities": 0,
+    "netWorth": 23486295,
+    "breakdown": {
+      "cash": 16932000,
+      "stockKr": 3889800,
+      "stockUs": 2664495,
+      "other": 0
+    }
+  },
+  {
+    "id": "19ef88d9-ab37-4ae0-8c65-59407da05ead",
+    "date": "2026-04-10",
+    "totalAssets": 23598960,
+    "totalLiabilities": 0,
+    "netWorth": 23598960,
+    "breakdown": {
+      "cash": 17016000,
+      "stockKr": 3902400.0000000005,
+      "stockUs": 2680560,
+      "other": 0
+    }
+  },
+  {
+    "id": "4228bb50-d659-4d65-b4d5-3ee0ec1c3f7b",
+    "date": "2026-04-17",
+    "totalAssets": 23711625.000000004,
+    "totalLiabilities": 0,
+    "netWorth": 23711625.000000004,
+    "breakdown": {
+      "cash": 17100000.000000004,
+      "stockKr": 3914999.9999999995,
+      "stockUs": 2696625,
+      "other": 0
+    }
+  },
+  {
+    "id": "54e48e47-7c10-4bda-b9ef-aaf20e08a7fd",
+    "date": "2026-04-22",
+    "totalAssets": 21747500,
+    "totalLiabilities": 0,
+    "netWorth": 21747500,
+    "breakdown": {
+      "cash": 15500000,
+      "stockKr": 3750000,
+      "stockUs": 2497500,
+      "other": 0
+    }
+  },
+  {
+    "id": "2af0da92-24ec-43e8-b899-a663675265ae",
+    "date": "2026-04-28",
+    "totalAssets": 21747500,
+    "totalLiabilities": 0,
+    "netWorth": 21747500,
+    "breakdown": {
+      "cash": 15500000,
+      "stockKr": 3750000,
+      "stockUs": 2497500,
+      "other": 0
+    }
+  }
+]

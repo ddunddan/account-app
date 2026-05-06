@@ -1,0 +1,26 @@
+[
+  {
+    "id": "hold-samsung",
+    "name": "삼성전자",
+    "ticker": "005930",
+    "market": "KOSPI",
+    "currency": "KRW",
+    "quantity": 50,
+    "avgPrice": 72000,
+    "currentPrice": 75000,
+    "priceUpdatedAt": "2026-04-22",
+    "memo": ""
+  },
+  {
+    "id": "hold-apple",
+    "name": "Apple",
+    "ticker": "AAPL",
+    "market": "NASDAQ",
+    "currency": "USD",
+    "quantity": 10,
+    "avgPrice": 170,
+    "currentPrice": 185,
+    "priceUpdatedAt": "2026-04-22",
+    "memo": ""
+  }
+]
