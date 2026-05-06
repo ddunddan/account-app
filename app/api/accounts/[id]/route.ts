@@ -1,22 +1,23 @@
 import { NextResponse } from 'next/server'
-import { readJson, writeJson } from '@/lib/db'
-import { Account } from '@/types'
+import { supabase } from '@/lib/supabase'
 
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const body = await req.json()
-  const accounts = readJson<Account[]>('accounts.json', [])
-  const idx = accounts.findIndex(a => a.id === id)
-  if (idx === -1) return NextResponse.json({ error: 'Not found' }, { status: 404 })
-  accounts[idx] = { ...accounts[idx], ...body }
-  writeJson('accounts.json', accounts)
-  return NextResponse.json(accounts[idx])
+  const { data, error } = await supabase
+    .from('accounts')
+    .update({ name: body.name, type: body.type, currency: body.currency, balance: body.balance })
+    .eq('id', id)
+    .select()
+    .single()
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+  if (!data) return NextResponse.json({ error: 'Not found' }, { status: 404 })
+  return NextResponse.json({ id: data.id, name: data.name, type: data.type, currency: data.currency, balance: data.balance, createdAt: data.created_at })
 }
 
 export async function DELETE(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const accounts = readJson<Account[]>('accounts.json', [])
-  const filtered = accounts.filter(a => a.id !== id)
-  writeJson('accounts.json', filtered)
+  const { error } = await supabase.from('accounts').delete().eq('id', id)
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json({ ok: true })
 }
