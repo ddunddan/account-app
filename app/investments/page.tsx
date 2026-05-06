@@ -61,10 +61,11 @@ export default function InvestmentsPage() {
 
   const pieData = holdingsWithValue.map(h => ({ name: h.name, value: Math.round(h.valueKRW) }))
 
-  const { register, handleSubmit, setValue, reset, formState: { isSubmitting } } = useForm<FormData>({
+  const { register, handleSubmit, watch, setValue, reset, formState: { isSubmitting } } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: { market: 'KOSPI', currency: 'KRW', currentPrice: 0 },
   })
+  const watchMarket = watch('market')
 
   const openEdit = (h: Holding) => {
     setEditHolding(h)
@@ -214,7 +215,8 @@ export default function InvestmentsPage() {
               <div className="space-y-1"><Label>티커</Label><Input {...register('ticker')} /></div>
               <div className="space-y-1">
                 <Label>시장</Label>
-                <Select onValueChange={v => { if (v) setValue('market', v as Holding['market']) }} defaultValue={editHolding?.market}>
+                <Select value={watchMarket ?? 'KOSPI'} onValueChange={v => setValue('market', v as Holding['market'])}>
+
                   <SelectTrigger><SelectValue /></SelectTrigger>
                   <SelectContent>
                     {['KOSPI','KOSDAQ','NYSE','NASDAQ','OTHER'].map(m => <SelectItem key={m} value={m}>{m}</SelectItem>)}

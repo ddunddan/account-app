@@ -41,11 +41,12 @@ export default function TradesPage() {
     queryFn: () => fetch('/api/holdings').then(r => r.json()),
   })
 
-  const { register, handleSubmit, setValue, reset, watch, formState: { errors, isSubmitting } } = useForm<FormData>({
+  const { register, handleSubmit, watch, setValue, reset, formState: { errors, isSubmitting } } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: { date: format(new Date(), 'yyyy-MM-dd'), type: 'buy', fee: 0 },
   })
   const tradeType = watch('type')
+  const holdingId = watch('holdingId')
 
   const holdingMap = Object.fromEntries(holdings.map(h => [h.id, h]))
 
@@ -124,7 +125,7 @@ export default function TradesPage() {
             </div>
             <div className="space-y-1">
               <Label>종목</Label>
-              <Select onValueChange={(v: string | null) => { if (v) setValue('holdingId', v) }}>
+              <Select value={holdingId ?? ''} onValueChange={v => { if (v) setValue('holdingId', v) }}>
                 <SelectTrigger><SelectValue placeholder="종목 선택" /></SelectTrigger>
                 <SelectContent>
                   {holdings.map(h => <SelectItem key={h.id} value={h.id}>{h.name} ({h.ticker})</SelectItem>)}

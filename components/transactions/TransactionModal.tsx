@@ -56,6 +56,8 @@ export default function TransactionModal({ open, onClose, onSuccess, editTx }: P
   })
 
   const txType = watch('type')
+  const accountId = watch('accountId')
+  const categoryId = watch('categoryId')
 
   useEffect(() => {
     if (!open) return
@@ -129,7 +131,7 @@ export default function TransactionModal({ open, onClose, onSuccess, editTx }: P
           {/* 계좌 */}
           <div className="space-y-1">
             <Label>계좌</Label>
-            <Select onValueChange={v => { if (v) setValue('accountId', v) }} defaultValue={editTx?.accountId ?? undefined}>
+            <Select value={accountId ?? ''} onValueChange={v => { if (v) setValue('accountId', v) }}>
               <SelectTrigger>
                 <SelectValue placeholder="계좌 선택" />
               </SelectTrigger>
@@ -146,7 +148,7 @@ export default function TransactionModal({ open, onClose, onSuccess, editTx }: P
           {txType !== 'transfer' && (
             <div className="space-y-1">
               <Label>카테고리</Label>
-              <Select onValueChange={v => { if (v) setValue('categoryId', v) }} defaultValue={editTx?.categoryId ?? undefined}>
+              <Select value={categoryId ?? ''} onValueChange={v => { if (v) setValue('categoryId', v) }}>
                 <SelectTrigger>
                   <SelectValue placeholder="카테고리 선택" />
                 </SelectTrigger>

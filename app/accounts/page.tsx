@@ -52,10 +52,12 @@ export default function AccountsPage() {
     queryFn: () => fetch('/api/accounts').then(r => r.json()),
   })
 
-  const { register, handleSubmit, setValue, reset, formState: { errors, isSubmitting } } = useForm<FormData>({
+  const { register, handleSubmit, watch, setValue, reset, formState: { errors, isSubmitting } } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: { currency: 'KRW', balance: 0 },
   })
+  const watchType = watch('type')
+  const watchCurrency = watch('currency')
 
   const openAdd = () => {
     setEditAccount(undefined)
@@ -157,7 +159,7 @@ export default function AccountsPage() {
             </div>
             <div className="space-y-1">
               <Label>종류</Label>
-              <Select onValueChange={v => { if (v) setValue('type', v as AccountType) }} defaultValue={editAccount?.type}>
+              <Select value={watchType ?? ''} onValueChange={v => setValue('type', v as AccountType)}>
                 <SelectTrigger><SelectValue placeholder="종류 선택" /></SelectTrigger>
                 <SelectContent>
                   {ACCOUNT_TYPES.map(t => <SelectItem key={t.value} value={t.value}>{t.label}</SelectItem>)}
@@ -166,7 +168,7 @@ export default function AccountsPage() {
             </div>
             <div className="space-y-1">
               <Label>통화</Label>
-              <Select onValueChange={v => { if (v) setValue('currency', v as 'KRW' | 'USD') }} defaultValue={editAccount?.currency ?? 'KRW'}>
+              <Select value={watchCurrency ?? 'KRW'} onValueChange={v => setValue('currency', v as 'KRW' | 'USD')}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="KRW">KRW (원화)</SelectItem>
