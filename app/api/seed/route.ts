@@ -1,14 +1,6 @@
 import { NextResponse } from 'next/server'
 import { createServerSupabase } from '@/lib/supabase-server'
 
-const DEFAULT_ACCOUNTS = [
-  { name: '국민 입출금', type: 'checking', currency: 'KRW' },
-  { name: '키움',        type: 'stock_kr', currency: 'KRW' },
-  { name: '카카오',      type: 'savings',  currency: 'KRW' },
-  { name: '토스',        type: 'savings',  currency: 'KRW' },
-  { name: '한투 ISA',    type: 'stock_kr', currency: 'KRW' },
-  { name: '한투 연금',   type: 'stock_kr', currency: 'KRW' },
-]
 
 const DEFAULT_CATEGORIES = [
   { name: '식비',     type: 'expense', color: '#ef4444', icon: 'UtensilsCrossed' },
@@ -40,17 +32,6 @@ export async function POST() {
       parent_id: null,
     }))
     await supabase.from('categories').insert(catRows)
-  }
-
-  const { data: existingAccs } = await supabase.from('accounts').select('id').limit(1)
-  if (!existingAccs || existingAccs.length === 0) {
-    const accRows = DEFAULT_ACCOUNTS.map((a, i) => ({
-      id: `${user.id.slice(0, 8)}-acc-${i}`,
-      ...a,
-      balance: 0,
-      user_id: user.id,
-    }))
-    await supabase.from('accounts').insert(accRows)
   }
 
   return NextResponse.json({ ok: true, seeded: true })
