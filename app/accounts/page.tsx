@@ -46,6 +46,7 @@ export default function AccountsPage() {
   const queryClient = useQueryClient()
   const [modalOpen, setModalOpen] = useState(false)
   const [editAccount, setEditAccount] = useState<Account | undefined>()
+  const [deleteTarget, setDeleteTarget] = useState<Account | undefined>()
 
   const { data: accounts = [] } = useQuery<Account[]>({
     queryKey: ['accounts'],
@@ -82,12 +83,17 @@ export default function AccountsPage() {
     } else toast.error('저장 실패')
   }
 
-  const deleteAccount = async (id: string) => {
-    if (!confirm('삭제하시겠습니까?')) return
-    const res = await fetch(`/api/accounts/${id}`, { method: 'DELETE' })
+  const deleteAccount = async () => {
+    if (!deleteTarget) return
+    const res = await fetch(`/api/accounts/${deleteTarget.id}`, { method: 'DELETE' })
     if (res.ok) {
       toast.success('삭제되었습니다')
       queryClient.invalidateQueries({ queryKey: ['accounts'] })
+      queryClient.invalidateQueries({ queryKey: ['dashboard'] })
+      setDeleteTarget(undefined)
+    } else {
+      const body = await res.json().catch(() => ({}))
+      toast.error(body.error ?? '삭제에 실패했습니다')
     }
   }
 
@@ -136,7 +142,7 @@ export default function AccountsPage() {
                   <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => openEdit(acc)}>
                     <Pencil className="h-3.5 w-3.5" />
                   </Button>
-                  <Button variant="ghost" size="icon" className="h-8 w-8 text-red-500" onClick={() => deleteAccount(acc.id)}>
+                  <Button variant="ghost" size="icon" className="h-8 w-8 text-red-500" onClick={() => setDeleteTarget(acc)}>
                     <Trash2 className="h-3.5 w-3.5" />
                   </Button>
                 </div>
@@ -185,6 +191,22 @@ export default function AccountsPage() {
               <Button type="submit" className="flex-1" disabled={isSubmitting}>저장</Button>
             </div>
           </form>
+        </DialogContent>
+      </Dialog>
+
+      {/* 삭제 확인 다이얼로그 */}
+      <Dialog open={!!deleteTarget} onOpenChange={v => !v && setDeleteTarget(undefined)}>
+        <DialogContent className="sm:max-w-sm">
+          <DialogHeader>
+            <DialogTitle>계좌 삭제</DialogTitle>
+          </DialogHeader>
+          <p className="text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">{deleteTarget?.name}</span> 계좌를 삭제하시겠습니까?
+          </p>
+          <div className="flex gap-2 pt-2">
+            <Button variant="outline" className="flex-1" onClick={() => setDeleteTarget(undefined)}>취소</Button>
+            <Button variant="destructive" className="flex-1" onClick={deleteAccount}>삭제</Button>
+          </div>
         </DialogContent>
       </Dialog>
     </div>
