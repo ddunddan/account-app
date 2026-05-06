@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { createServerSupabase } from '@/lib/supabase-server'
 
 export async function GET() {
+  const supabase = await createServerSupabase()
   const { data, error } = await supabase.from('exchange_rates').select('*')
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   if (!data || data.length === 0) {
@@ -11,12 +12,18 @@ export async function GET() {
 }
 
 export async function PUT(req: Request) {
+  const supabase = await createServerSupabase()
+  const { data: { user } } = await supabase.auth.getUser()
+  if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
   const body = await req.json()
   const { data, error } = await supabase
     .from('exchange_rates')
-    .upsert({ currency: body.currency, rate: body.rate, updated_at: new Date().toISOString() })
-    .select()
-    .single()
+    .upsert(
+      { user_id: user.id, currency: body.currency, rate: body.rate, updated_at: new Date().toISOString() },
+      { onConflict: 'user_id,currency' }
+    )
+    .select().single()
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json({ currency: data.currency, rate: data.rate, updatedAt: data.updated_at })
 }

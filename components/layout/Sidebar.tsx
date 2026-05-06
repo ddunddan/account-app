@@ -11,6 +11,7 @@ import {
   Settings,
   Plus,
   Wallet,
+  LogOut,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -27,9 +28,11 @@ const nav = [
 
 interface SidebarProps {
   onQuickInput?: () => void
+  userEmail?: string
+  onLogout?: () => void
 }
 
-export default function Sidebar({ onQuickInput }: SidebarProps) {
+export default function Sidebar({ onQuickInput, userEmail, onLogout }: SidebarProps) {
   const pathname = usePathname()
 
   return (
@@ -62,6 +65,21 @@ export default function Sidebar({ onQuickInput }: SidebarProps) {
           </Link>
         ))}
       </nav>
+
+      <div className="border-t border-border p-3">
+        {userEmail && (
+          <p className="mb-2 truncate px-1 text-xs text-muted-foreground">{userEmail}</p>
+        )}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="w-full justify-start gap-2 text-muted-foreground"
+          onClick={onLogout}
+        >
+          <LogOut className="h-4 w-4" />
+          로그아웃
+        </Button>
+      </div>
     </aside>
   )
 }

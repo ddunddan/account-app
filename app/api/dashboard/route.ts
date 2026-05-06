@@ -1,10 +1,11 @@
 import { NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { createServerSupabase } from '@/lib/supabase-server'
 import { Account, Transaction, Category, Holding, NetWorthSnapshot, ExchangeRate, DashboardData } from '@/types'
 import { calcTotalAssets } from '@/lib/calc'
 import { format, subMonths, subDays } from 'date-fns'
 
 export async function GET() {
+  const supabase = await createServerSupabase()
   const [
     { data: accData },
     { data: txData },
@@ -69,14 +70,12 @@ export async function GET() {
   }, null)
 
   const data: DashboardData = {
-    totalAssets: breakdown.total,
-    netWorth: breakdown.total,
+    totalAssets: breakdown.total, netWorth: breakdown.total,
     assetBreakdown: { cash: breakdown.cash, stockKr: breakdown.stockKr, stockUs: breakdown.stockUs, other: breakdown.other },
     monthlyIncome, monthlyExpense, savingsRate, prevMonthExpense, prevMonthIncome,
     recentTransactions, topHoldings, snapshots: recentSnapshots,
     prevDayAssets: prevDaySnapshot?.totalAssets ?? breakdown.total,
     prevMonthAssets: prevMonthSnapshot?.totalAssets ?? breakdown.total,
   }
-
   return NextResponse.json(data)
 }
