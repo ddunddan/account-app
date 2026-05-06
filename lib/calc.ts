@@ -8,19 +8,24 @@ export function calcTotalAssets(
   const usdRate = exchangeRates.find(r => r.currency === 'USD')?.rate ?? 1300
 
   let cash = 0
+  let stockKrAcc = 0
+  let stockUsAcc = 0
   let other = 0
   for (const acc of accounts) {
     const balanceKRW = acc.currency === 'USD' ? acc.balance * usdRate : acc.balance
     if (acc.type === 'cash' || acc.type === 'checking' || acc.type === 'savings') {
       cash += balanceKRW
+    } else if (acc.type === 'stock_kr') {
+      stockKrAcc += balanceKRW
+    } else if (acc.type === 'stock_us') {
+      stockUsAcc += balanceKRW
     } else if (acc.type === 'other') {
       other += balanceKRW
     }
-    // stock accounts are counted via holdings
   }
 
-  let stockKr = 0
-  let stockUs = 0
+  let stockKr = stockKrAcc
+  let stockUs = stockUsAcc
   for (const h of holdings) {
     const valueKRW = h.currency === 'USD' ? h.currentPrice * h.quantity * usdRate : h.currentPrice * h.quantity
     if (h.market === 'KOSPI' || h.market === 'KOSDAQ') {

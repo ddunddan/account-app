@@ -90,7 +90,6 @@ export default function AccountsPage() {
   }
 
   const totalKRW = accounts.reduce((s, a) => {
-    if (a.type === 'stock_kr' || a.type === 'stock_us') return s
     return s + (a.currency === 'USD' ? a.balance * 1350 : a.balance)
   }, 0)
 
