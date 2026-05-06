@@ -1,6 +1,15 @@
 import { NextResponse } from 'next/server'
 import { createServerSupabase } from '@/lib/supabase-server'
 
+const DEFAULT_ACCOUNTS = [
+  { name: '국민 입출금', type: 'checking', currency: 'KRW' },
+  { name: '키움',        type: 'stock_kr', currency: 'KRW' },
+  { name: '카카오',      type: 'savings',  currency: 'KRW' },
+  { name: '토스',        type: 'savings',  currency: 'KRW' },
+  { name: '한투 ISA',    type: 'stock_kr', currency: 'KRW' },
+  { name: '한투 연금',   type: 'stock_kr', currency: 'KRW' },
+]
+
 const DEFAULT_CATEGORIES = [
   { name: '식비',     type: 'expense', color: '#ef4444', icon: 'UtensilsCrossed' },
   { name: '교통',     type: 'expense', color: '#f97316', icon: 'Car' },
@@ -22,16 +31,27 @@ export async function POST() {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const { data: existing } = await supabase.from('categories').select('id').limit(1)
-  if (existing && existing.length > 0) return NextResponse.json({ ok: true, seeded: false })
+  const { data: existingCats } = await supabase.from('categories').select('id').limit(1)
+  if (!existingCats || existingCats.length === 0) {
+    const catRows = DEFAULT_CATEGORIES.map((c, i) => ({
+      id: `${user.id.slice(0, 8)}-cat-${i}`,
+      ...c,
+      user_id: user.id,
+      parent_id: null,
+    }))
+    await supabase.from('categories').insert(catRows)
+  }
 
-  const rows = DEFAULT_CATEGORIES.map((c, i) => ({
-    id: `${user.id.slice(0, 8)}-cat-${i}`,
-    ...c,
-    user_id: user.id,
-    parent_id: null,
-  }))
-  await supabase.from('categories').insert(rows)
+  const { data: existingAccs } = await supabase.from('accounts').select('id').limit(1)
+  if (!existingAccs || existingAccs.length === 0) {
+    const accRows = DEFAULT_ACCOUNTS.map((a, i) => ({
+      id: `${user.id.slice(0, 8)}-acc-${i}`,
+      ...a,
+      balance: 0,
+      user_id: user.id,
+    }))
+    await supabase.from('accounts').insert(accRows)
+  }
 
   return NextResponse.json({ ok: true, seeded: true })
 }
